@@ -1,0 +1,207 @@
+{
+ "actions": [],
+ "autoname": "autoincrement",
+ "creation": "2024-07-27 10:40:35.847412",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "invoice_details_section",
+  "status",
+  "invoice_number",
+  "from",
+  "from_address",
+  "from_gst",
+  "column_break_zbuo",
+  "date",
+  "customer",
+  "to_address",
+  "to_gst",
+  "section_break_gmjq",
+  "invoice_items",
+  "section_break_sbkq",
+  "cgst",
+  "column_break_jpwk",
+  "sgst",
+  "column_break_nohp",
+  "igst",
+  "column_break_bxqp",
+  "total_amount",
+  "invoice_total"
+ ],
+ "fields": [
+  {
+   "fieldname": "invoice_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Invoice Number",
+   "read_only": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "invoice_items",
+   "fieldtype": "Table",
+   "label": "Invoice Items",
+   "options": "Invoice Item",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_gmjq",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "from",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "From",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_zbuo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "from_address",
+   "fieldtype": "Small Text",
+   "in_list_view": 1,
+   "label": "Address",
+   "max_height": "60px",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "from_gst",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "GSTIN",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fetch_from": "customer.address",
+   "fieldname": "to_address",
+   "fieldtype": "Small Text",
+   "label": "Address",
+   "max_height": "60px",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "customer.gst_number",
+   "fieldname": "to_gst",
+   "fieldtype": "Data",
+   "label": "GSTIN"
+  },
+  {
+   "fieldname": "invoice_details_section",
+   "fieldtype": "Section Break",
+   "label": "Invoice Details"
+  },
+  {
+   "default": "Draft",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Draft\nSubmitted"
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "To",
+   "options": "Customer",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_sbkq",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "cgst",
+   "fieldtype": "Currency",
+   "label": "CGST",
+   "options": "currency",
+   "precision": "2"
+  },
+  {
+   "fieldname": "sgst",
+   "fieldtype": "Currency",
+   "label": "SGST",
+   "options": "currency",
+   "precision": "2"
+  },
+  {
+   "fieldname": "igst",
+   "fieldtype": "Currency",
+   "label": "IGST",
+   "options": "currency",
+   "precision": "2"
+  },
+  {
+   "fieldname": "total_amount",
+   "fieldtype": "Currency",
+   "label": "Amount",
+   "options": "currency",
+   "precision": "2"
+  },
+  {
+   "fieldname": "column_break_jpwk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_nohp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_bxqp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "invoice_total",
+   "fieldtype": "Currency",
+   "label": "Invoice Total ",
+   "options": "currency",
+   "precision": "2"
+  }
+ ],
+ "hide_toolbar": 1,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-08-03 21:33:12.460055",
+ "modified_by": "Administrator",
+ "module": "Billing",
+ "name": "Gst Invoice",
+ "naming_rule": "Autoincrement",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [
+  {
+   "color": "Blue",
+   "title": "Draft"
+  },
+  {
+   "color": "Green",
+   "title": "Submitted"
+  }
+ ],
+ "track_changes": 1
+}

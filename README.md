@@ -4,4 +4,4 @@ manage business
 
 #### License
 
-mit
+mit# vidarbha_erp

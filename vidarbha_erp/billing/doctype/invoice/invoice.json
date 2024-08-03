@@ -1,0 +1,54 @@
+{
+ "actions": [],
+ "autoname": "autoincrement",
+ "creation": "2024-07-27 10:37:04.668479",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "invoice_number",
+  "date",
+  "to"
+ ],
+ "fields": [
+  {
+   "fieldname": "invoice_number",
+   "fieldtype": "Data",
+   "label": "Invoice Number"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "to",
+   "fieldtype": "Data",
+   "label": "To"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-07-27 11:23:09.015690",
+ "modified_by": "Administrator",
+ "module": "Billing",
+ "name": "Invoice",
+ "naming_rule": "Autoincrement",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
