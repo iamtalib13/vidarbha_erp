@@ -1,7 +1,7 @@
 app_name = "vidarbha_erp"
 app_title = "Vidarbha Erp"
 app_publisher = "Talib Sheikh"
-app_description = "manages Invoices and transactions"
+app_description = "Manages Invoices and Transactions"
 app_email = "talibsheikh16@gmail.com"
 app_license = "mit"
 

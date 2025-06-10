@@ -1,6 +1,6 @@
 ### Vidarbha Erp
 
-manages Invoices and transactions
+Manages Invoices and Transactions
 
 ### Installation
 
