@@ -1,7 +1,5 @@
 {
  "actions": [],
- "allow_rename": 1,
- "autoname": "format: {invoice_type}{invoice_date}",
  "creation": "2025-06-10 13:05:55.088021",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -54,11 +52,11 @@
    "reqd": 1
   },
   {
-   "default": "Draft",
+   "default": "Not-Uploaded",
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
-   "options": "Draft\nPending\nSubmitted"
+   "options": "\nNot-Uploaded\nUploaded"
   },
   {
    "fieldname": "section_break_zlkd",
@@ -85,11 +83,10 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-06-10 15:34:38.746740",
+ "modified": "2025-06-13 14:20:56.600183",
  "modified_by": "Administrator",
  "module": "Vidarbha Erp",
  "name": "Invoice",
- "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
@@ -104,10 +101,51 @@
    "select": 1,
    "share": 1,
    "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Vidarbha Admin",
+   "select": 1,
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Vidharbha User",
+   "share": 1,
+   "write": 1
   }
  ],
  "row_format": "Dynamic",
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [
+  {
+   "color": "Light Blue",
+   "title": " Not-Uploaded"
+  },
+  {
+   "color": "Green",
+   "title": "Uploaded"
+  },
+  {
+   "color": "Blue",
+   "title": "GST"
+  },
+  {
+   "color": "Cyan",
+   "title": "DPDN"
+  }
+ ]
 }
