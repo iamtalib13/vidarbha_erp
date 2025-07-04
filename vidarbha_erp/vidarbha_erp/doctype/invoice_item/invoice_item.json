@@ -18,9 +18,10 @@
   {
    "columns": 2,
    "fieldname": "amount_without_gst",
-   "fieldtype": "Data",
+   "fieldtype": "Currency",
    "in_list_view": 1,
    "label": "Amount without GST",
+   "precision": "2",
    "reqd": 1
   },
   {
@@ -36,37 +37,41 @@
   {
    "columns": 1,
    "fieldname": "igst",
-   "fieldtype": "Data",
+   "fieldtype": "Currency",
    "in_list_view": 1,
-   "label": "IGST"
+   "label": "IGST",
+   "precision": "2"
   },
   {
    "columns": 1,
    "fieldname": "cgst",
-   "fieldtype": "Data",
+   "fieldtype": "Currency",
    "in_list_view": 1,
-   "label": "CGST"
+   "label": "CGST",
+   "precision": "2"
   },
   {
    "columns": 1,
    "fieldname": "sgst",
-   "fieldtype": "Data",
+   "fieldtype": "Currency",
    "in_list_view": 1,
-   "label": "SGST"
+   "label": "SGST",
+   "precision": "2"
   },
   {
    "columns": 3,
    "fieldname": "amount_with_gst",
-   "fieldtype": "Data",
+   "fieldtype": "Currency",
    "in_list_view": 1,
-   "label": "Amount With GST"
+   "label": "Amount With GST",
+   "precision": "2"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-06-11 17:50:28.066140",
+ "modified": "2025-07-04 21:21:10.673841",
  "modified_by": "Administrator",
  "module": "Vidarbha Erp",
  "name": "Invoice Item",
