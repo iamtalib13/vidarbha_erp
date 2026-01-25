@@ -21,8 +21,7 @@
    "fieldtype": "Currency",
    "in_list_view": 1,
    "label": "Amount without GST",
-   "precision": "2",
-   "reqd": 1
+   "precision": "2"
   },
   {
    "columns": 1,
@@ -71,7 +70,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-07-04 21:21:10.673841",
+ "modified": "2025-07-04 22:38:54.227951",
  "modified_by": "Administrator",
  "module": "Vidarbha Erp",
  "name": "Invoice Item",

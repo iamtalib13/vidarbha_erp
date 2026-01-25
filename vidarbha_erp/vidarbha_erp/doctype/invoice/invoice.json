@@ -7,8 +7,8 @@
   "section_break_dlal",
   "invoice_date",
   "invoice_number",
-  "column_break_ogzy",
   "invoice_type",
+  "column_break_ogzy",
   "customer",
   "status",
   "section_break_zlkd",
@@ -45,10 +45,11 @@
    "reqd": 1
   },
   {
+   "default": "Whirlpool of India Ltd",
    "fieldname": "customer",
-   "fieldtype": "Link",
+   "fieldtype": "Select",
    "label": "Customer",
-   "options": "Customer",
+   "options": "Whirlpool of India Ltd\nPanasonic Life Solutions India Pvt. Ltd",
    "reqd": 1
   },
   {
@@ -83,7 +84,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-06-13 14:20:56.600183",
+ "modified": "2025-08-13 13:30:05.491491",
  "modified_by": "Administrator",
  "module": "Vidarbha Erp",
  "name": "Invoice",
@@ -132,20 +133,12 @@
  "sort_order": "DESC",
  "states": [
   {
-   "color": "Light Blue",
-   "title": " Not-Uploaded"
+   "color": "Red",
+   "title": "Not-Uploaded"
   },
   {
    "color": "Green",
    "title": "Uploaded"
-  },
-  {
-   "color": "Blue",
-   "title": "GST"
-  },
-  {
-   "color": "Cyan",
-   "title": "DPDN"
   }
  ]
 }

@@ -3,7 +3,7 @@
 
 # import frappe
 from frappe.model.document import Document
-
+from decimal import Decimal, ROUND_HALF_UP
 
 import frappe
 from frappe.model.naming import make_autoname  # If you use frappe's naming series
@@ -39,27 +39,24 @@ class Invoice(Document):
         self.name = prefix
 
 
-#  calculate gst and displaing in invoice
     def before_save(self):
-        items = getattr(self, "invoice_item", [])
-        gst_rate = 0.18
+        gst_rate = Decimal("0.18")
 
-        total_amount = sum(float(row.amount_without_gst or 0) for row in items)
-        total_gst = round(total_amount * gst_rate, 2)
-        half_gst = round(total_gst / 2, 2)
+        for row in self.invoice_item:
+            # Convert to Decimal for accuracy
+            amt_with_gst = Decimal(str(row.amount_with_gst or 0))
 
-        for row in items:
-            amount = float(row.amount_without_gst or 0)
-            gst = round(amount * gst_rate, 2)
-            half = round(gst / 2, 2)
-            row.igst = gst
-            row.cgst = row.sgst = half
-            row.amount_with_gst = round(amount + gst, 2)
+            # Calculate amount without GST
+            amt_without_gst = (amt_with_gst / (Decimal("1.00") + gst_rate)).quantize(Decimal("0.01"), rounding=ROUND_HALF_UP)
 
-        self.amount_without_gst = round(total_amount, 2)
-        self.gst_amount = total_gst
-        self.cgst = self.sgst = half_gst
-        self.amount_with_gst = round(total_amount + total_gst, 2)
+            # Calculate total GST
+            gst = (amt_with_gst - amt_without_gst).quantize(Decimal("0.01"), rounding=ROUND_HALF_UP)
 
+            # Calculate CGST and SGST as half of GST
+            half_gst = (gst / 2).quantize(Decimal("0.01"), rounding=ROUND_HALF_UP)
 
-
+            # Assign values
+            row.amount_without_gst = float(amt_without_gst)
+            row.igst = float(gst)               # Full GST
+            row.cgst = float(half_gst)
+            row.sgst = float(half_gst)
